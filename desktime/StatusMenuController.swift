@@ -46,13 +46,13 @@ class StatusMenuController: NSObject {
         showDots = !showDots;
 
         // Render new time
-        var hours = 0;
-        var minutes = floor(runTime / 60);
+        var hours:Int = 0;
+        var minutes:Double = floor(runTime / 60);
         while (minutes >= 60) {
             hours += 1;
             minutes -= 60;
         }
-        statusItem.title = String(format:"%02.f", hours)
+        statusItem.title = String(format:"%02d", hours)
             + (showDots ? ":" : " ")
             + String(format:"%02.f", minutes);
     }
