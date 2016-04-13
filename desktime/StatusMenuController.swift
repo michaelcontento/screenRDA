@@ -52,9 +52,9 @@ class StatusMenuController: NSObject {
             hours += 1;
             minutes -= 60;
         }
-        statusItem.title = String(format:"%02d", hours)
+        statusItem.title = String(format:"%02.f", hours)
             + (showDots ? ":" : " ")
-            + String(format:"%02d", minutes);
+            + String(format:"%02.f", minutes);
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {
