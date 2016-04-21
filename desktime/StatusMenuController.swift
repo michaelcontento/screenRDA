@@ -17,8 +17,10 @@ class StatusMenuController: NSObject {
     var lastTick:NSTimeInterval = NSDate().timeIntervalSince1970
     var runTime:Double = 0
     var showDots:Bool = true
+    var showTime:Bool = false
     var screenIsLocked:Bool = false
     var screensaverIsRunning:Bool = false;
+    var timeLimit:Double = 8 * 60 * 60 * 1000;
 
     let eventMap: [String: Selector] = [
         "com.apple.screenIsLocked": #selector(onScreenLocked),
@@ -39,7 +41,7 @@ class StatusMenuController: NSObject {
     }
 
     override func awakeFromNib() {
-        statusItem.title = "00:00"
+        statusItem.title = showTime ? "00:00" : "."
         statusItem.menu = statusMenu
 
         updateTimer = NSTimer.scheduledTimerWithTimeInterval(
@@ -90,15 +92,23 @@ class StatusMenuController: NSObject {
         // Update attributes
         lastTick = now;
         showDots = !showDots;
+        let isOverLimit = runTime >= timeLimit;
 
-        // Render new time
+        // Render Short
+        if (!showTime) {
+            statusItem.title = isOverLimit ? "!!" : ".";
+            return;
+        }
+        
+        // Render Long
         var hours:Int = 0;
         var minutes:Double = floor(runTime / 60);
         while (minutes >= 60) {
             hours += 1;
             minutes -= 60;
         }
-        statusItem.title = String(format:"%02d", hours)
+        statusItem.title = (isOverLimit ? "!! " : "")
+            + String(format:"%02d", hours)
             + (showDots ? ":" : " ")
             + String(format:"%02.f", minutes);
     }
