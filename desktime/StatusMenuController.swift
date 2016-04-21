@@ -15,6 +15,7 @@ class StatusMenuController: NSObject {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     var updateTimer:NSTimer?
     var lastTick:NSTimeInterval = NSDate().timeIntervalSince1970
+    var lastDayOfYear:Int = -1;
     var runTime:Double = 0
     var showDots:Bool = true
     var showTime:Bool = false
@@ -44,6 +45,8 @@ class StatusMenuController: NSObject {
         statusItem.title = showTime ? "00:00" : "."
         statusItem.menu = statusMenu
 
+        lastDayOfYear = dayOfYear()
+        
         updateTimer = NSTimer.scheduledTimerWithTimeInterval(
             1.0,
             target: self,
@@ -79,21 +82,33 @@ class StatusMenuController: NSObject {
     func onScreenSaverStop() {
         screensaverIsRunning = false
     }
+    
+    func dayOfYear() -> Int {
+        let date = NSDate()
+        let cal = NSCalendar.currentCalendar()
+        return cal.ordinalityOfUnit(.Day, inUnit: .Year, forDate: date)
+    }
 
     func onTimerTick() {
         // Calculate time delta
         let now = NSDate().timeIntervalSince1970;
         let diff = now - lastTick;
-
         if !isIdle() {
             runTime += diff;
         }
-
+    
+        // Detect day change
+        let currentDayOfYear = dayOfYear()
+        if (currentDayOfYear != lastDayOfYear) {
+            lastDayOfYear = currentDayOfYear
+            runTime = 0;
+        }
+    
         // Update attributes
         lastTick = now;
         showDots = !showDots;
         let isOverLimit = runTime >= timeLimit;
-
+    
         // Render Short
         if (!showTime) {
             statusItem.title = isOverLimit ? "!!" : ".";
