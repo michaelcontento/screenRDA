@@ -21,7 +21,23 @@
         </customObject>
         <menu id="B9F-rr-fne">
             <items>
+                <menuItem title="00:00:00" id="f8R-Hv-7sw">
+                    <attributedString key="attributedTitle"/>
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="XyP-PV-mKL"/>
+                <menuItem title="Daily reset at: 00:00" id="49G-dh-5XW">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="Launch at start" id="2Xl-bk-Stx">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="MbC-9X-gZ2"/>
+                <menuItem title="Dump JSON" id="9p4-Fn-D5m">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
                 <menuItem title="Quit" id="h8B-gE-Bpz">
+                    <attributedString key="attributedTitle"/>
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="quitClicked:" target="Ajc-IA-SqY" id="s46-m9-ieb"/>
