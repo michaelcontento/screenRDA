@@ -11,17 +11,20 @@ import Foundation
 
 class StatusMenuController: NSObject {
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var timeDisplay: NSMenuItem!
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     var updateTimer:NSTimer?
     var lastTick:NSTimeInterval = NSDate().timeIntervalSince1970
     var lastDayOfYear:Int = -1;
     var runTime:Double = 0
-    var showDots:Bool = true
-    var showTime:Bool = false
     var screenIsLocked:Bool = false
     var screensaverIsRunning:Bool = false;
     var timeLimit:Double = 8 * 60 * 60 * 1000;
+
+    let imageEmpty = NSImage(named: "HourGlassEmpty");
+    let imageHalf = NSImage(named: "HourGlassHalf");
+    let imageFull = NSImage(named: "HourGlassFull");
 
     let eventMap: [String: Selector] = [
         "com.apple.screenIsLocked": #selector(onScreenLocked),
@@ -42,10 +45,11 @@ class StatusMenuController: NSObject {
     }
 
     override func awakeFromNib() {
-        statusItem.title = showTime ? "00:00" : "."
-        statusItem.menu = statusMenu
+        statusItem.button?.image = imageEmpty;
 
-        lastDayOfYear = dayOfYear()
+        statusItem.menu = statusMenu;
+
+        lastDayOfYear = dayOfYear();
         
         updateTimer = NSTimer.scheduledTimerWithTimeInterval(
             1.0,
@@ -54,11 +58,6 @@ class StatusMenuController: NSObject {
             userInfo: nil,
             repeats: true
         )
-
-//        FIXME: Text is cut off
-//        let icon = NSImage(named: "StatusIcon")
-//        icon?.template = true
-//        statusItem.image = icon
 
         registerNotifications()
     }
@@ -100,19 +99,21 @@ class StatusMenuController: NSObject {
         // Detect day change
         let currentDayOfYear = dayOfYear()
         if (currentDayOfYear != lastDayOfYear) {
-            lastDayOfYear = currentDayOfYear
+            lastDayOfYear = currentDayOfYear;
             runTime = 0;
+            statusItem.button?.image = imageEmpty;
         }
-    
+
         // Update attributes
         lastTick = now;
-        showDots = !showDots;
+
+        let isOverHalf = runTime >= (timeLimit / 2);
         let isOverLimit = runTime >= timeLimit;
-    
-        // Render Short
-        if (!showTime) {
-            statusItem.title = isOverLimit ? "!!" : ".";
-            return;
+
+        if isOverHalf {
+            statusItem.button?.image = imageHalf;
+        } else if isOverLimit {
+            statusItem.button?.image = imageFull;
         }
         
         // Render Long
@@ -122,10 +123,10 @@ class StatusMenuController: NSObject {
             hours += 1;
             minutes -= 60;
         }
-        statusItem.title = (isOverLimit ? "!! " : "")
-            + String(format:"%02d", hours)
-            + (showDots ? ":" : " ")
-            + String(format:"%02.f", minutes);
+
+        // TODO use singular for "1 hour" and "1 minute", we can handle this together with i18n!
+        timeDisplay.title = String(format:"%d Hours %.f minutes", hours, minutes);
+
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {
