@@ -15,6 +15,7 @@
 		C88025881CBE43040065BCE0 /* statusIcon-sun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88025871CBE43040065BCE0 /* statusIcon-sun@2x.png */; };
 		C880258A1CBE430A0065BCE0 /* statusIcon-sun.png in Resources */ = {isa = PBXBuildFile; fileRef = C88025891CBE430A0065BCE0 /* statusIcon-sun.png */; };
 		C880258C1CBE43930065BCE0 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880258B1CBE43930065BCE0 /* StatusMenuController.swift */; };
+		C8B287551CCE09FD00F68A9D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B287541CCE09FD00F68A9D /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C88025871CBE43040065BCE0 /* statusIcon-sun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statusIcon-sun@2x.png"; sourceTree = "<group>"; };
 		C88025891CBE430A0065BCE0 /* statusIcon-sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statusIcon-sun.png"; sourceTree = "<group>"; };
 		C880258B1CBE43930065BCE0 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		C8B287541CCE09FD00F68A9D /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C88025621CBE41B90065BCE0 /* MainMenu.xib */,
 				C88025651CBE41B90065BCE0 /* Info.plist */,
 				C880258B1CBE43930065BCE0 /* StatusMenuController.swift */,
+				C8B287541CCE09FD00F68A9D /* Timer.swift */,
 			);
 			path = desktime;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B287551CCE09FD00F68A9D /* Timer.swift in Sources */,
 				C880258C1CBE43930065BCE0 /* StatusMenuController.swift in Sources */,
 				C880255F1CBE41B80065BCE0 /* AppDelegate.swift in Sources */,
 			);

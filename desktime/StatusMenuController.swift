@@ -15,12 +15,7 @@ class StatusMenuController: NSObject {
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     var updateTimer:NSTimer?
-    var lastTick:NSTimeInterval = NSDate().timeIntervalSince1970
-    var lastDayOfYear:Int = -1;
-    var runTime:Double = 0
-    var screenIsLocked:Bool = false
-    var screensaverIsRunning:Bool = false;
-    var timeLimit:Double = 8 * 60 * 60 * 1000;
+    var timer:Timer = Timer();
 
     let imageEmpty = NSImage(named: "HourGlassEmpty");
     let imageHalf = NSImage(named: "HourGlassHalf");
@@ -46,11 +41,8 @@ class StatusMenuController: NSObject {
 
     override func awakeFromNib() {
         statusItem.button?.image = imageEmpty;
-
         statusItem.menu = statusMenu;
 
-        lastDayOfYear = dayOfYear();
-        
         updateTimer = NSTimer.scheduledTimerWithTimeInterval(
             1.0,
             target: self,
@@ -62,61 +54,25 @@ class StatusMenuController: NSObject {
         registerNotifications()
     }
 
-    func isIdle() -> Bool {
-        return screensaverIsRunning || screenIsLocked
-    }
-
     func onScreenLocked() {
-        screenIsLocked = true
+        timer.enable(false);
     }
 
     func onScreenUnlocked() {
-        screenIsLocked = false
+        timer.enable();
     }
 
     func onScreenSaverStart() {
-        screensaverIsRunning = true
+        timer.enable(false);
     }
 
     func onScreenSaverStop() {
-        screensaverIsRunning = false
-    }
-    
-    func dayOfYear() -> Int {
-        let date = NSDate()
-        let cal = NSCalendar.currentCalendar()
-        return cal.ordinalityOfUnit(.Day, inUnit: .Year, forDate: date)
+        timer.enable();
     }
 
     func onTimerTick() {
-        // Calculate time delta
-        let now = NSDate().timeIntervalSince1970;
-        let diff = now - lastTick;
-        if !isIdle() {
-            runTime += diff;
-        }
-    
-        // Detect day change
-        let currentDayOfYear = dayOfYear()
-        if (currentDayOfYear != lastDayOfYear) {
-            lastDayOfYear = currentDayOfYear;
-            runTime = 0;
-            statusItem.button?.image = imageEmpty;
-        }
+        let runTime = timer.update();
 
-        // Update attributes
-        lastTick = now;
-
-        let isOverHalf = runTime >= (timeLimit / 2);
-        let isOverLimit = runTime >= timeLimit;
-
-        if isOverHalf {
-            statusItem.button?.image = imageHalf;
-        } else if isOverLimit {
-            statusItem.button?.image = imageFull;
-        }
-        
-        // Render Long
         var hours:Int = 0;
         var minutes:Double = floor(runTime / 60);
         while (minutes >= 60) {
@@ -130,6 +86,7 @@ class StatusMenuController: NSObject {
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {
+        timer.update();
         NSApplication.sharedApplication().terminate(self)
     }
 }
