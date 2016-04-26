@@ -44,6 +44,8 @@ class StatusMenuController: NSObject {
         statusItem.button?.image = imageEmpty;
         statusItem.menu = statusMenu;
 
+        timeDisplay.title = formatHourAndMinute(0, minutes: 0);
+
         updateTimer = NSTimer.scheduledTimerWithTimeInterval(
             1.0,
             target: self,
@@ -93,10 +95,29 @@ class StatusMenuController: NSObject {
             hours += 1;
             minutes -= 60;
         }
+        timeDisplay.title = formatHourAndMinute(hours, minutes: minutes);
+    }
 
-        // TODO use singular for "1 hour" and "1 minute", we can handle this together with i18n!
-        timeDisplay.title = String(format:"%d Hours %.f minutes", hours, minutes);
+    func formatHourAndMinute(hours:Int, minutes:Double) -> String {
+        var format = "";
 
+        if (hours == 1) {
+            format += "%d Hour ";
+        } else if (hours > 1) {
+            format += "%d Hours ";
+        }
+
+        if (minutes == 1) {
+            format += "%.f Minute";
+        } else if (minutes > 1) {
+            format += "%.f Minutes";
+        }
+
+        if (hours == 0 && minutes == 0) {
+            format = "< 1 Minute";
+        }
+
+        return String(format: format, hours, minutes);
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {
