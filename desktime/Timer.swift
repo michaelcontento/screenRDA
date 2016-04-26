@@ -43,7 +43,7 @@ class Timer: NSObject {
         _prefs.setDouble(_runTime, forKey: _getDateString());
     }
 
-    func enable(flag:Bool? = false) {
+    func enable(flag:Bool? = true) {
         if (_active == flag) {
             return;
         }
