@@ -9,7 +9,7 @@
 import Cocoa
 import Foundation
 
-class StatusMenuController: NSObject {
+class StatusMenuController: NSObject, NSMenuDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
     @IBOutlet weak var timeDisplay: NSMenuItem!
 
@@ -43,18 +43,22 @@ class StatusMenuController: NSObject {
     override func awakeFromNib() {
         statusItem.button?.image = imageEmpty;
         statusItem.menu = statusMenu;
+        statusItem.menu?.delegate = self;
 
-        timeDisplay.title = formatHourAndMinute(0, minutes: 0);
-
+        onTimerTick();
         updateTimer = NSTimer.scheduledTimerWithTimeInterval(
-            1.0,
+            5 * 60.0,
             target: self,
             selector: #selector(StatusMenuController.onTimerTick),
             userInfo: nil,
             repeats: true
-        )
+        );
 
-        registerNotifications()
+        registerNotifications();
+    }
+
+    func menuWillOpen(menu: NSMenu) {
+        onTimerTick();
     }
 
     func onScreenLocked() {
