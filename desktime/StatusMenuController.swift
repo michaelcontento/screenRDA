@@ -80,10 +80,10 @@ class StatusMenuController: NSObject {
         let isOverHalf = runTime >= (timeLimit / 2);
         let isOverLimit = runTime >= timeLimit;
 
-        if isOverHalf {
-            statusItem.button?.image = imageHalf;
-        } else if isOverLimit {
+        if isOverLimit {
             statusItem.button?.image = imageFull;
+        } else if isOverHalf {
+            statusItem.button?.image = imageHalf;
         } else {
             statusItem.button?.image = imageEmpty;
         }
