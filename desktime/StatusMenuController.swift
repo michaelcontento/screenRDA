@@ -16,7 +16,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     var updateTimer:NSTimer?
     var timer:Timer = Timer();
-    var timeLimit:Double = 8 * 60 * 60 * 1000;
+    var timeLimit:Double = 8 * 60 * 60;
 
     let imageEmpty = NSImage(named: "HourGlassEmpty");
     let imageHalf = NSImage(named: "HourGlassHalf");
