@@ -12,8 +12,6 @@
 		C88025641CBE41B90065BCE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C88025621CBE41B90065BCE0 /* MainMenu.xib */; };
 		C880256F1CBE41B90065BCE0 /* desktimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880256E1CBE41B90065BCE0 /* desktimeTests.swift */; };
 		C880257A1CBE41B90065BCE0 /* desktimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88025791CBE41B90065BCE0 /* desktimeUITests.swift */; };
-		C88025881CBE43040065BCE0 /* statusIcon-sun@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C88025871CBE43040065BCE0 /* statusIcon-sun@2x.png */; };
-		C880258A1CBE430A0065BCE0 /* statusIcon-sun.png in Resources */ = {isa = PBXBuildFile; fileRef = C88025891CBE430A0065BCE0 /* statusIcon-sun.png */; };
 		C880258C1CBE43930065BCE0 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880258B1CBE43930065BCE0 /* StatusMenuController.swift */; };
 		C8B287551CCE09FD00F68A9D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B287541CCE09FD00F68A9D /* Timer.swift */; };
 /* End PBXBuildFile section */
@@ -47,8 +45,6 @@
 		C88025751CBE41B90065BCE0 /* desktimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desktimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88025791CBE41B90065BCE0 /* desktimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desktimeUITests.swift; sourceTree = "<group>"; };
 		C880257B1CBE41B90065BCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C88025871CBE43040065BCE0 /* statusIcon-sun@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statusIcon-sun@2x.png"; sourceTree = "<group>"; };
-		C88025891CBE430A0065BCE0 /* statusIcon-sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "statusIcon-sun.png"; sourceTree = "<group>"; };
 		C880258B1CBE43930065BCE0 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		C8B287541CCE09FD00F68A9D /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,8 +97,6 @@
 		C880255D1CBE41B80065BCE0 /* desktime */ = {
 			isa = PBXGroup;
 			children = (
-				C88025891CBE430A0065BCE0 /* statusIcon-sun.png */,
-				C88025871CBE43040065BCE0 /* statusIcon-sun@2x.png */,
 				C880255E1CBE41B80065BCE0 /* AppDelegate.swift */,
 				C88025601CBE41B80065BCE0 /* Assets.xcassets */,
 				C88025621CBE41B90065BCE0 /* MainMenu.xib */,
@@ -236,9 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C88025611CBE41B80065BCE0 /* Assets.xcassets in Resources */,
-				C880258A1CBE430A0065BCE0 /* statusIcon-sun.png in Resources */,
 				C88025641CBE41B90065BCE0 /* MainMenu.xib in Resources */,
-				C88025881CBE43040065BCE0 /* statusIcon-sun@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
