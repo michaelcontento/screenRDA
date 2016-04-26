@@ -13,25 +13,28 @@ class Timer: NSObject {
     var _lastDayOfYear:Int = -1;
     var _runTime:Double = 0;
     var _active:Bool = true;
-    let _prefs = NSUserDefaults.standardUserDefaults()
+    let _prefs = NSUserDefaults.standardUserDefaults();
+    let _calendar =  NSCalendar.autoupdatingCurrentCalendar();
+    let _dateFormatter = NSDateFormatter();
 
     func _getDayOfYear() -> Int {
-        let date = NSDate()
-        let cal = NSCalendar.currentCalendar()
-        return cal.ordinalityOfUnit(.Day, inUnit: .Year, forDate: date)
+        return _calendar.ordinalityOfUnit(
+            .Day,
+            inUnit: .Year,
+            forDate: NSDate()
+        )
     }
 
     func _getDateString() -> String {
-        let date = NSDate();
-        let dateFormatter = NSDateFormatter();
-        dateFormatter.dateFormat = "yyyy-MM-dd";
-        return dateFormatter.stringFromDate(date);
+        return _dateFormatter.stringFromDate(NSDate());
     }
 
     override init() {
         super.init();
 
+        _dateFormatter.dateFormat = "yyyy-MM-dd";
         _lastDayOfYear = _getDayOfYear();
+
         _loadTime();
     }
 
