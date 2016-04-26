@@ -16,6 +16,7 @@ class StatusMenuController: NSObject {
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
     var updateTimer:NSTimer?
     var timer:Timer = Timer();
+    var timeLimit:Double = 8 * 60 * 60 * 1000;
 
     let imageEmpty = NSImage(named: "HourGlassEmpty");
     let imageHalf = NSImage(named: "HourGlassHalf");
@@ -73,6 +74,19 @@ class StatusMenuController: NSObject {
     func onTimerTick() {
         let runTime = timer.update();
 
+        // Set current icon
+        let isOverHalf = runTime >= (timeLimit / 2);
+        let isOverLimit = runTime >= timeLimit;
+
+        if isOverHalf {
+            statusItem.button?.image = imageHalf;
+        } else if isOverLimit {
+            statusItem.button?.image = imageFull;
+        } else {
+            statusItem.button?.image = imageEmpty;
+        }
+
+        // Render time
         var hours:Int = 0;
         var minutes:Double = floor(runTime / 60);
         while (minutes >= 60) {

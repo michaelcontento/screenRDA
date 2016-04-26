@@ -12,7 +12,6 @@ class Timer: NSObject {
     var _lastTick:NSTimeInterval = NSDate().timeIntervalSince1970;
     var _lastDayOfYear:Int = -1;
     var _runTime:Double = 0;
-    var _timeLimit:Double = 8 * 60 * 60 * 1000;
     var _active:Bool = true;
 
     func _getDayOfYear() -> Int {
