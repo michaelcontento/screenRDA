@@ -29,9 +29,8 @@
                 <menuItem title="Launch at start" id="2Xl-bk-Stx">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Quit" id="h8B-gE-Bpz">
+                <menuItem title="Quit" keyEquivalent="q" id="h8B-gE-Bpz">
                     <attributedString key="attributedTitle"/>
-                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="quitClicked:" target="Ajc-IA-SqY" id="s46-m9-ieb"/>
                     </connections>
