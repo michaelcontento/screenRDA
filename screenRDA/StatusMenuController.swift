@@ -58,6 +58,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
 
     func menuWillOpen(menu: NSMenu) {
+        // Update and re-render to show only the latest infos
         onTimerTick();
     }
 
@@ -67,6 +68,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
 
     func onScreenUnlocked() {
         timer.enable();
+
+        // Re-render, as a day change might have changed the timer!
+        onTimerTick();
     }
 
     func onScreenSaverStart() {
@@ -75,6 +79,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
 
     func onScreenSaverStop() {
         timer.enable();
+
+        // Re-render, as a day change might have changed the timer!
+        onTimerTick();
     }
 
     func onTimerTick() {
