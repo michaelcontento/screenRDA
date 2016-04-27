@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  desktime
+//  screenRDA
 //
 //  Created by Michael Contento on 13/04/16.
 //  Copyright © 2016 BurningTree. All rights reserved.

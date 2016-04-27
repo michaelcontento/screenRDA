@@ -10,8 +10,8 @@
 		C880255F1CBE41B80065BCE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880255E1CBE41B80065BCE0 /* AppDelegate.swift */; };
 		C88025611CBE41B80065BCE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C88025601CBE41B80065BCE0 /* Assets.xcassets */; };
 		C88025641CBE41B90065BCE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C88025621CBE41B90065BCE0 /* MainMenu.xib */; };
-		C880256F1CBE41B90065BCE0 /* desktimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880256E1CBE41B90065BCE0 /* desktimeTests.swift */; };
-		C880257A1CBE41B90065BCE0 /* desktimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88025791CBE41B90065BCE0 /* desktimeUITests.swift */; };
+		C880256F1CBE41B90065BCE0 /* screenRDATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880256E1CBE41B90065BCE0 /* screenRDATests.swift */; };
+		C880257A1CBE41B90065BCE0 /* screenRDAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88025791CBE41B90065BCE0 /* screenRDAUITests.swift */; };
 		C880258C1CBE43930065BCE0 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880258B1CBE43930065BCE0 /* StatusMenuController.swift */; };
 		C8B287551CCE09FD00F68A9D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B287541CCE09FD00F68A9D /* Timer.swift */; };
 /* End PBXBuildFile section */
@@ -22,28 +22,28 @@
 			containerPortal = C88025531CBE41B80065BCE0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C880255A1CBE41B80065BCE0;
-			remoteInfo = desktime;
+			remoteInfo = screenRDA;
 		};
 		C88025761CBE41B90065BCE0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C88025531CBE41B80065BCE0 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C880255A1CBE41B80065BCE0;
-			remoteInfo = desktime;
+			remoteInfo = screenRDA;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C880255B1CBE41B80065BCE0 /* desktime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desktime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C880255B1CBE41B80065BCE0 /* screenRDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = screenRDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C880255E1CBE41B80065BCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88025601CBE41B80065BCE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C88025631CBE41B90065BCE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		C88025651CBE41B90065BCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C880256A1CBE41B90065BCE0 /* desktimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desktimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C880256E1CBE41B90065BCE0 /* desktimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desktimeTests.swift; sourceTree = "<group>"; };
+		C880256A1CBE41B90065BCE0 /* screenRDATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = screenRDATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C880256E1CBE41B90065BCE0 /* screenRDATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenRDATests.swift; sourceTree = "<group>"; };
 		C88025701CBE41B90065BCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C88025751CBE41B90065BCE0 /* desktimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = desktimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C88025791CBE41B90065BCE0 /* desktimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = desktimeUITests.swift; sourceTree = "<group>"; };
+		C88025751CBE41B90065BCE0 /* screenRDAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = screenRDAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C88025791CBE41B90065BCE0 /* screenRDAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenRDAUITests.swift; sourceTree = "<group>"; };
 		C880257B1CBE41B90065BCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C880258B1CBE43930065BCE0 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		C8B287541CCE09FD00F68A9D /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
@@ -77,9 +77,9 @@
 		C88025521CBE41B80065BCE0 = {
 			isa = PBXGroup;
 			children = (
-				C880255D1CBE41B80065BCE0 /* desktime */,
-				C880256D1CBE41B90065BCE0 /* desktimeTests */,
-				C88025781CBE41B90065BCE0 /* desktimeUITests */,
+				C880255D1CBE41B80065BCE0 /* screenRDA */,
+				C880256D1CBE41B90065BCE0 /* screenRDATests */,
+				C88025781CBE41B90065BCE0 /* screenRDAUITests */,
 				C880255C1CBE41B80065BCE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,14 +87,14 @@
 		C880255C1CBE41B80065BCE0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C880255B1CBE41B80065BCE0 /* desktime.app */,
-				C880256A1CBE41B90065BCE0 /* desktimeTests.xctest */,
-				C88025751CBE41B90065BCE0 /* desktimeUITests.xctest */,
+				C880255B1CBE41B80065BCE0 /* screenRDA.app */,
+				C880256A1CBE41B90065BCE0 /* screenRDATests.xctest */,
+				C88025751CBE41B90065BCE0 /* screenRDAUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C880255D1CBE41B80065BCE0 /* desktime */ = {
+		C880255D1CBE41B80065BCE0 /* screenRDA */ = {
 			isa = PBXGroup;
 			children = (
 				C880255E1CBE41B80065BCE0 /* AppDelegate.swift */,
@@ -104,33 +104,33 @@
 				C880258B1CBE43930065BCE0 /* StatusMenuController.swift */,
 				C8B287541CCE09FD00F68A9D /* Timer.swift */,
 			);
-			path = desktime;
+			path = screenRDA;
 			sourceTree = "<group>";
 		};
-		C880256D1CBE41B90065BCE0 /* desktimeTests */ = {
+		C880256D1CBE41B90065BCE0 /* screenRDATests */ = {
 			isa = PBXGroup;
 			children = (
-				C880256E1CBE41B90065BCE0 /* desktimeTests.swift */,
+				C880256E1CBE41B90065BCE0 /* screenRDATests.swift */,
 				C88025701CBE41B90065BCE0 /* Info.plist */,
 			);
-			path = desktimeTests;
+			path = screenRDATests;
 			sourceTree = "<group>";
 		};
-		C88025781CBE41B90065BCE0 /* desktimeUITests */ = {
+		C88025781CBE41B90065BCE0 /* screenRDAUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C88025791CBE41B90065BCE0 /* desktimeUITests.swift */,
+				C88025791CBE41B90065BCE0 /* screenRDAUITests.swift */,
 				C880257B1CBE41B90065BCE0 /* Info.plist */,
 			);
-			path = desktimeUITests;
+			path = screenRDAUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C880255A1CBE41B80065BCE0 /* desktime */ = {
+		C880255A1CBE41B80065BCE0 /* screenRDA */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C880257E1CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "desktime" */;
+			buildConfigurationList = C880257E1CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "screenRDA" */;
 			buildPhases = (
 				C88025571CBE41B80065BCE0 /* Sources */,
 				C88025581CBE41B80065BCE0 /* Frameworks */,
@@ -140,14 +140,14 @@
 			);
 			dependencies = (
 			);
-			name = desktime;
-			productName = desktime;
-			productReference = C880255B1CBE41B80065BCE0 /* desktime.app */;
+			name = screenRDA;
+			productName = screenRDA;
+			productReference = C880255B1CBE41B80065BCE0 /* screenRDA.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C88025691CBE41B90065BCE0 /* desktimeTests */ = {
+		C88025691CBE41B90065BCE0 /* screenRDATests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C88025811CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "desktimeTests" */;
+			buildConfigurationList = C88025811CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "screenRDATests" */;
 			buildPhases = (
 				C88025661CBE41B90065BCE0 /* Sources */,
 				C88025671CBE41B90065BCE0 /* Frameworks */,
@@ -158,14 +158,14 @@
 			dependencies = (
 				C880256C1CBE41B90065BCE0 /* PBXTargetDependency */,
 			);
-			name = desktimeTests;
-			productName = desktimeTests;
-			productReference = C880256A1CBE41B90065BCE0 /* desktimeTests.xctest */;
+			name = screenRDATests;
+			productName = screenRDATests;
+			productReference = C880256A1CBE41B90065BCE0 /* screenRDATests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C88025741CBE41B90065BCE0 /* desktimeUITests */ = {
+		C88025741CBE41B90065BCE0 /* screenRDAUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C88025841CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "desktimeUITests" */;
+			buildConfigurationList = C88025841CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "screenRDAUITests" */;
 			buildPhases = (
 				C88025711CBE41B90065BCE0 /* Sources */,
 				C88025721CBE41B90065BCE0 /* Frameworks */,
@@ -176,9 +176,9 @@
 			dependencies = (
 				C88025771CBE41B90065BCE0 /* PBXTargetDependency */,
 			);
-			name = desktimeUITests;
-			productName = desktimeUITests;
-			productReference = C88025751CBE41B90065BCE0 /* desktimeUITests.xctest */;
+			name = screenRDAUITests;
+			productName = screenRDAUITests;
+			productReference = C88025751CBE41B90065BCE0 /* screenRDAUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C88025561CBE41B80065BCE0 /* Build configuration list for PBXProject "desktime" */;
+			buildConfigurationList = C88025561CBE41B80065BCE0 /* Build configuration list for PBXProject "screenRDA" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,9 +217,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C880255A1CBE41B80065BCE0 /* desktime */,
-				C88025691CBE41B90065BCE0 /* desktimeTests */,
-				C88025741CBE41B90065BCE0 /* desktimeUITests */,
+				C880255A1CBE41B80065BCE0 /* screenRDA */,
+				C88025691CBE41B90065BCE0 /* screenRDATests */,
+				C88025741CBE41B90065BCE0 /* screenRDAUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C880256F1CBE41B90065BCE0 /* desktimeTests.swift in Sources */,
+				C880256F1CBE41B90065BCE0 /* screenRDATests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C880257A1CBE41B90065BCE0 /* desktimeUITests.swift in Sources */,
+				C880257A1CBE41B90065BCE0 /* screenRDAUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,12 +282,12 @@
 /* Begin PBXTargetDependency section */
 		C880256C1CBE41B90065BCE0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C880255A1CBE41B80065BCE0 /* desktime */;
+			target = C880255A1CBE41B80065BCE0 /* screenRDA */;
 			targetProxy = C880256B1CBE41B90065BCE0 /* PBXContainerItemProxy */;
 		};
 		C88025771CBE41B90065BCE0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C880255A1CBE41B80065BCE0 /* desktime */;
+			target = C880255A1CBE41B80065BCE0 /* screenRDA */;
 			targetProxy = C88025761CBE41B90065BCE0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -391,9 +391,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = desktime/Info.plist;
+				INFOPLIST_FILE = screenRDA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.desktime;
+				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.screenRDA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -403,9 +403,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = desktime/Info.plist;
+				INFOPLIST_FILE = screenRDA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.desktime;
+				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.screenRDA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -415,11 +415,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = desktimeTests/Info.plist;
+				INFOPLIST_FILE = screenRDATests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.desktimeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.screenRDATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desktime.app/Contents/MacOS/desktime";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/screenRDA.app/Contents/MacOS/screenRDA";
 			};
 			name = Debug;
 		};
@@ -428,11 +428,11 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = desktimeTests/Info.plist;
+				INFOPLIST_FILE = screenRDATests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.desktimeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.screenRDATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/desktime.app/Contents/MacOS/desktime";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/screenRDA.app/Contents/MacOS/screenRDA";
 			};
 			name = Release;
 		};
@@ -440,11 +440,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = desktimeUITests/Info.plist;
+				INFOPLIST_FILE = screenRDAUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.desktimeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.screenRDAUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = desktime;
+				TEST_TARGET_NAME = screenRDA;
 			};
 			name = Debug;
 		};
@@ -452,18 +452,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = desktimeUITests/Info.plist;
+				INFOPLIST_FILE = screenRDAUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.desktimeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.screenRDAUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = desktime;
+				TEST_TARGET_NAME = screenRDA;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C88025561CBE41B80065BCE0 /* Build configuration list for PBXProject "desktime" */ = {
+		C88025561CBE41B80065BCE0 /* Build configuration list for PBXProject "screenRDA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C880257C1CBE41B90065BCE0 /* Debug */,
@@ -472,7 +472,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C880257E1CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "desktime" */ = {
+		C880257E1CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "screenRDA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C880257F1CBE41B90065BCE0 /* Debug */,
@@ -480,7 +480,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		C88025811CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "desktimeTests" */ = {
+		C88025811CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "screenRDATests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C88025821CBE41B90065BCE0 /* Debug */,
@@ -488,7 +488,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		C88025841CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "desktimeUITests" */ = {
+		C88025841CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "screenRDAUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C88025851CBE41B90065BCE0 /* Debug */,

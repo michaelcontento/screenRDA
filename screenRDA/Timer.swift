@@ -1,6 +1,6 @@
 //
 //  Timer.swift
-//  desktime
+//  screenRDA
 //
 //  Created by Michael Contento on 25/04/16.
 //  Copyright © 2016 BurningTree. All rights reserved.

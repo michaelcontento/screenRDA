@@ -12,9 +12,9 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="desktime" customModuleProvider="target"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="screenRDA" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <customObject id="Ajc-IA-SqY" customClass="StatusMenuController" customModule="desktime" customModuleProvider="target">
+        <customObject id="Ajc-IA-SqY" customClass="StatusMenuController" customModule="screenRDA" customModuleProvider="target">
             <connections>
                 <outlet property="statusMenu" destination="B9F-rr-fne" id="ea7-Dn-S3K"/>
                 <outlet property="timeDisplay" destination="f8R-Hv-7sw" id="ctC-JB-70E"/>
