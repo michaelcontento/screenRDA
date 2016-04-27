@@ -16,6 +16,7 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="Ajc-IA-SqY" customClass="StatusMenuController" customModule="screenRDA" customModuleProvider="target">
             <connections>
+                <outlet property="launchAtStart" destination="2Xl-bk-Stx" id="Np0-ZW-knr"/>
                 <outlet property="statusMenu" destination="B9F-rr-fne" id="ea7-Dn-S3K"/>
                 <outlet property="timeDisplay" destination="f8R-Hv-7sw" id="ctC-JB-70E"/>
             </connections>
@@ -26,8 +27,12 @@
                     <attributedString key="attributedTitle"/>
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="YKl-Ed-BN5"/>
                 <menuItem title="Launch at start" id="2Xl-bk-Stx">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="launchAtStartClicked:" target="Ajc-IA-SqY" id="3hD-9l-XLw"/>
+                    </connections>
                 </menuItem>
                 <menuItem title="Quit" keyEquivalent="q" id="h8B-gE-Bpz">
                     <attributedString key="attributedTitle"/>

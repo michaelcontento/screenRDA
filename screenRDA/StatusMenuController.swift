@@ -11,6 +11,7 @@ import Foundation
 
 class StatusMenuController: NSObject, NSMenuDelegate {
     @IBOutlet weak var statusMenu: NSMenu!
+    @IBOutlet weak var launchAtStart: NSMenuItem!
     @IBOutlet weak var timeDisplay: NSMenuItem!
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
@@ -45,7 +46,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         statusItem.menu = statusMenu;
         statusItem.menu?.delegate = self;
 
+        updateLaunchAtStartMenu();
         onTimerTick();
+
         updateTimer = NSTimer.scheduledTimerWithTimeInterval(
             5 * 60.0,
             target: self,
@@ -129,6 +132,19 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         }
 
         return String(format: format, hours, minutes);
+    }
+
+    func updateLaunchAtStartMenu() {
+        if (applicationIsInStartUpItems()) {
+            launchAtStart.state = NSOnState;
+        } else {
+            launchAtStart.state = NSOffState;
+        }
+    }
+
+    @IBAction func launchAtStartClicked(sender: AnyObject) {
+        toggleLaunchAtStartup();
+        updateLaunchAtStartMenu();
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {
