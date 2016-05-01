@@ -23,6 +23,9 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     let imageHalf = NSImage(named: "HourGlassHalf");
     let imageFull = NSImage(named: "HourGlassFull");
 
+    var screenLocked:Bool = false;
+    var screenSaverRunning:Bool = false;
+
     let eventMap: [String: Selector] = [
         "com.apple.screenIsLocked": #selector(onScreenLocked),
         "com.apple.screenIsUnlocked": #selector(onScreenUnlocked),
@@ -60,28 +63,41 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         registerNotifications();
     }
 
+
+    func isIdle() -> Bool {
+        return !screenLocked && !screenSaverRunning;
+    }
+
     func menuWillOpen(menu: NSMenu) {
         // Update and re-render to show only the latest infos
         onTimerTick();
     }
 
     func onScreenLocked() {
-        timer.enable(false);
+        screenLocked = true;
+
+        timer.enable(isIdle());
     }
 
     func onScreenUnlocked() {
-        timer.enable();
+        screenLocked = false;
+
+        timer.enable(isIdle());
 
         // Re-render, as a day change might have changed the timer!
         onTimerTick();
     }
 
     func onScreenSaverStart() {
-        timer.enable(false);
+        screenSaverRunning = true;
+
+        timer.enable(isIdle());
     }
 
     func onScreenSaverStop() {
-        timer.enable();
+        screenSaverRunning = false;
+
+        timer.enable(isIdle());
 
         // Re-render, as a day change might have changed the timer!
         onTimerTick();
