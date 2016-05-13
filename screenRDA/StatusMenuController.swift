@@ -15,23 +15,23 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     @IBOutlet weak var timeDisplay: NSMenuItem!
 
     let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSVariableStatusItemLength)
-    var updateTimer:NSTimer?
-    var timer:Timer = Timer();
-    var timeLimit:Double = 8 * 60 * 60;
+    var updateTimer: NSTimer?
+    var timer: Timer = Timer()
+    var timeLimit: Double = 8 * 60 * 60
 
-    let imageEmpty = NSImage(named: "HourGlassEmpty");
-    let imageHalf = NSImage(named: "HourGlassHalf");
-    let imageFull = NSImage(named: "HourGlassFull");
+    let imageEmpty = NSImage(named: "HourGlassEmpty")
+    let imageHalf = NSImage(named: "HourGlassHalf")
+    let imageFull = NSImage(named: "HourGlassFull")
 
-    var screenLocked:Bool = false;
-    var screenSaverRunning:Bool = false;
+    var screenLocked: Bool = false
+    var screenSaverRunning: Bool = false
 
     let eventMap: [String: Selector] = [
         "com.apple.screenIsLocked": #selector(onScreenLocked),
         "com.apple.screenIsUnlocked": #selector(onScreenUnlocked),
         "com.apple.screensaver.didstart": #selector(onScreenSaverStart),
         "com.apple.screensaver.didstop": #selector(onScreenSaverStop),
-    ]
+        ]
 
     func registerNotifications() {
         let notificationCenter = NSDistributedNotificationCenter.defaultCenter()
@@ -45,12 +45,12 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
 
     override func awakeFromNib() {
-        statusItem.button?.image = imageEmpty;
-        statusItem.menu = statusMenu;
-        statusItem.menu?.delegate = self;
+        statusItem.button?.image = imageEmpty
+        statusItem.menu = statusMenu
+        statusItem.menu?.delegate = self
 
-        updateLaunchAtStartMenu();
-        onTimerTick();
+        updateLaunchAtStartMenu()
+        onTimerTick()
 
         updateTimer = NSTimer.scheduledTimerWithTimeInterval(
             5 * 60.0,
@@ -58,113 +58,113 @@ class StatusMenuController: NSObject, NSMenuDelegate {
             selector: #selector(StatusMenuController.onTimerTick),
             userInfo: nil,
             repeats: true
-        );
+        )
 
-        registerNotifications();
+        registerNotifications()
     }
 
 
     func isIdle() -> Bool {
-        return !screenLocked && !screenSaverRunning;
+        return !screenLocked && !screenSaverRunning
     }
 
     func menuWillOpen(menu: NSMenu) {
         // Update and re-render to show only the latest infos
-        onTimerTick();
+        onTimerTick()
     }
 
     func onScreenLocked() {
-        screenLocked = true;
+        screenLocked = true
 
-        timer.enable(isIdle());
+        timer.enable(isIdle())
     }
 
     func onScreenUnlocked() {
-        screenLocked = false;
+        screenLocked = false
 
-        timer.enable(isIdle());
+        timer.enable(isIdle())
 
         // Re-render, as a day change might have changed the timer!
-        onTimerTick();
+        onTimerTick()
     }
 
     func onScreenSaverStart() {
-        screenSaverRunning = true;
+        screenSaverRunning = true
 
-        timer.enable(isIdle());
+        timer.enable(isIdle())
     }
 
     func onScreenSaverStop() {
-        screenSaverRunning = false;
+        screenSaverRunning = false
 
-        timer.enable(isIdle());
+        timer.enable(isIdle())
 
         // Re-render, as a day change might have changed the timer!
-        onTimerTick();
+        onTimerTick()
     }
 
     func onTimerTick() {
-        let runTime = timer.update();
+        let runTime = timer.update()
 
         // Set current icon
-        let isOverHalf = runTime >= (timeLimit / 2);
-        let isOverLimit = runTime >= timeLimit;
+        let isOverHalf = runTime >= (timeLimit / 2)
+        let isOverLimit = runTime >= timeLimit
 
         if isOverLimit {
-            statusItem.button?.image = imageFull;
+            statusItem.button?.image = imageFull
         } else if isOverHalf {
-            statusItem.button?.image = imageHalf;
+            statusItem.button?.image = imageHalf
         } else {
-            statusItem.button?.image = imageEmpty;
+            statusItem.button?.image = imageEmpty
         }
 
         // Render time
-        var hours:Int = 0;
-        var minutes:Double = floor(runTime / 60);
+        var hours: Int = 0
+        var minutes: Double = floor(runTime / 60)
         while (minutes >= 60) {
-            hours += 1;
-            minutes -= 60;
+            hours += 1
+            minutes -= 60
         }
-        timeDisplay.title = formatHourAndMinute(hours, minutes: minutes);
+        timeDisplay.title = formatHourAndMinute(hours, minutes: minutes)
     }
 
-    func formatHourAndMinute(hours:Int, minutes:Double) -> String {
-        var format = "";
+    func formatHourAndMinute(hours: Int, minutes: Double) -> String {
+        var format = ""
 
         if (hours == 1) {
-            format += "%d Hour ";
+            format += "%d Hour "
         } else if (hours > 1) {
-            format += "%d Hours ";
+            format += "%d Hours "
         }
 
         if (minutes == 1) {
-            format += "%.f Minute";
+            format += "%.f Minute"
         } else if (minutes > 1) {
-            format += "%.f Minutes";
+            format += "%.f Minutes"
         }
 
         if (hours == 0 && minutes == 0) {
-            format = "< 1 Minute";
+            format = "< 1 Minute"
         }
 
-        return String(format: format, hours, minutes);
+        return String(format: format, hours, minutes)
     }
 
     func updateLaunchAtStartMenu() {
         if (applicationIsInStartUpItems()) {
-            launchAtStart.state = NSOnState;
+            launchAtStart.state = NSOnState
         } else {
-            launchAtStart.state = NSOffState;
+            launchAtStart.state = NSOffState
         }
     }
 
     @IBAction func launchAtStartClicked(sender: AnyObject) {
-        toggleLaunchAtStartup();
-        updateLaunchAtStartMenu();
+        toggleLaunchAtStartup()
+        updateLaunchAtStartMenu()
     }
 
     @IBAction func quitClicked(sender: NSMenuItem) {
-        timer.update();
+        timer.update()
         NSApplication.sharedApplication().terminate(self)
     }
 }
