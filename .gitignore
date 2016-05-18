@@ -1,3 +1,7 @@
 # Xcode
 screenRDA.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad/
 screenRDA.xcodeproj/xcuserdata/*.xcuserdatad/
+
+# PSD exports
+icons/*.png
+screenshots/*.png
