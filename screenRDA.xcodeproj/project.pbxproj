@@ -47,6 +47,7 @@
 		C88025791CBE41B90065BCE0 /* screenRDAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = screenRDAUITests.swift; sourceTree = "<group>"; };
 		C880257B1CBE41B90065BCE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C880258B1CBE43930065BCE0 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		C8A540C01CECB64D009E1413 /* screenRDA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = screenRDA.entitlements; sourceTree = "<group>"; };
 		C8B287541CCE09FD00F68A9D /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		C8EA0D101CD0B1ED00588898 /* LaunchStarter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStarter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +100,7 @@
 		C880255D1CBE41B80065BCE0 /* screenRDA */ = {
 			isa = PBXGroup;
 			children = (
+				C8A540C01CECB64D009E1413 /* screenRDA.entitlements */,
 				C880255E1CBE41B80065BCE0 /* AppDelegate.swift */,
 				C88025601CBE41B80065BCE0 /* Assets.xcassets */,
 				C88025621CBE41B90065BCE0 /* MainMenu.xib */,
@@ -196,6 +198,11 @@
 				TargetAttributes = {
 					C880255A1CBE41B80065BCE0 = {
 						CreatedOnToolsVersion = 7.3;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					C88025691CBE41B90065BCE0 = {
 						CreatedOnToolsVersion = 7.3;
@@ -394,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = screenRDA/screenRDA.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = screenRDA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -406,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = screenRDA/screenRDA.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = screenRDA/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
