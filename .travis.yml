@@ -1,0 +1,13 @@
+language: objective-c
+osx_image: xcode7.3
+
+before_script:
+    - brew update
+    - brew install swiftlint
+
+env:
+    - CONFIGURATION=Debug
+    - CONFIGURATION=Release
+
+script:
+    - xctool -project screenRDA.xcodeproj -scheme screenRDA build -configuration $CONFIGURATION
