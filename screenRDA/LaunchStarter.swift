@@ -1,65 +1,36 @@
-// SOURCE: https://github.com/Gisonrg/Haze-SG/blob/develop/Haze%40SG/LaunchStarter.swift
-// TODO: http://martiancraft.com/blog/2015/01/login-items/
-//   OR: https://github.com/alexzielenski/StartAtLoginController
-
-//
-//  LaunchStarter.swift
-//  Haze@SG
-//
-//  Created by Jiang Sheng on 20/9/15.
-//  Copyright © 2015 Gisonrg. All rights reserved.
-//
-
 import Foundation
+import Cocoa
+import ServiceManagement
+
+let launcherAppIdentifier = "io.burningtree.screenRDALauncher"
 
 func applicationIsInStartUpItems() -> Bool {
-    return (itemReferencesInLoginItems().existingReference != nil)
-}
-
-func itemReferencesInLoginItems() -> (existingReference: LSSharedFileListItemRef?, lastReference: LSSharedFileListItemRef?) {
-
-    if let appUrl: NSURL = NSURL.fileURLWithPath(NSBundle.mainBundle().bundlePath) {
-        let loginItemsRef = LSSharedFileListCreate(
-            nil,
-            kLSSharedFileListSessionLoginItems.takeRetainedValue(),
-            nil
-            ).takeRetainedValue() as LSSharedFileListRef?
-        if loginItemsRef != nil {
-            let loginItems: NSArray = LSSharedFileListCopySnapshot(loginItemsRef, nil).takeRetainedValue() as NSArray
-            if(loginItems.count > 0) {
-                let lastItemRef: LSSharedFileListItemRef = loginItems.lastObject as! LSSharedFileListItemRef
-                for var i = 0; i < loginItems.count; ++i {
-                    let currentItemRef: LSSharedFileListItemRef = loginItems.objectAtIndex(i) as! LSSharedFileListItemRef
-                    if let itemURL = LSSharedFileListItemCopyResolvedURL(currentItemRef, 0, nil) {
-                        if (itemURL.takeRetainedValue() as NSURL).isEqual(appUrl) {
-                            return (currentItemRef, lastItemRef)
-                        }
-                    }
-                }
-
-                //The application was not found in the startup list
-                return (nil, lastItemRef)
-            } else {
-                let addatstart: LSSharedFileListItemRef = kLSSharedFileListItemBeforeFirst.takeRetainedValue()
-                return(nil, addatstart)
-            }
-        }
-    }
-    return (nil, nil)
+    return _readFlag()
 }
 
 func toggleLaunchAtStartup() {
-    let itemReferences = itemReferencesInLoginItems()
-    let shouldBeToggled = (itemReferences.existingReference == nil)
-    if let loginItemsRef = LSSharedFileListCreate( nil, kLSSharedFileListSessionLoginItems.takeRetainedValue(), nil).takeRetainedValue() as LSSharedFileListRef? {
-        if shouldBeToggled {
-            if let appUrl: CFURLRef = NSURL.fileURLWithPath(NSBundle.mainBundle().bundlePath) {
-                LSSharedFileListInsertItemURL(loginItemsRef, itemReferences.lastReference, nil, nil, appUrl, nil, nil)
-            }
-        } else {
-            if let itemRef = itemReferences.existingReference {
-                LSSharedFileListItemRemove(loginItemsRef, itemRef)
-            }
+    let mode = !applicationIsInStartUpItems()
+    if SMLoginItemSetEnabled(launcherAppIdentifier, mode) {
+        _saveFlag(mode)
+    }
+}
+
+func detectLaunchByHelper() {
+    var startedAtLogin = false
+    for app in NSWorkspace.sharedWorkspace().runningApplications {
+        if app.bundleIdentifier == launcherAppIdentifier {
+            startedAtLogin = true
         }
     }
+
+    _saveFlag(startedAtLogin)
+    NSDistributedNotificationCenter.defaultCenter().postNotificationName("killme", object: NSBundle.mainBundle().bundleIdentifier!)
+}
+
+func _readFlag() -> Bool {
+    return NSUserDefaults.standardUserDefaults().boolForKey("launchAtLogin")
+}
+
+func _saveFlag(flag: Bool) {
+    NSUserDefaults.standardUserDefaults().setBool(flag, forKey: "launchAtLogin")
 }

@@ -15,6 +15,11 @@
 		C880258C1CBE43930065BCE0 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C880258B1CBE43930065BCE0 /* StatusMenuController.swift */; };
 		C8B287551CCE09FD00F68A9D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B287541CCE09FD00F68A9D /* Timer.swift */; };
 		C8EA0D111CD0B1ED00588898 /* LaunchStarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EA0D101CD0B1ED00588898 /* LaunchStarter.swift */; };
+		C8F5F6551CEDCB8500F9B966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F5F6541CEDCB8500F9B966 /* AppDelegate.swift */; };
+		C8F5F6631CEDCC5F00F9B966 /* screenRDALauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = C8F5F6521CEDCB8500F9B966 /* screenRDALauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C8F5F6651CEDCC6E00F9B966 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F5F6641CEDCC6E00F9B966 /* ServiceManagement.framework */; };
+		C8F5F68E1CEDD53900F9B966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8F5F68C1CEDD53900F9B966 /* Assets.xcassets */; };
+		C8F5F6911CEDD53D00F9B966 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8F5F6901CEDD53D00F9B966 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C8F5F6621CEDCC5A00F9B966 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				C8F5F6631CEDCC5F00F9B966 /* screenRDALauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		C880255B1CBE41B80065BCE0 /* screenRDA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = screenRDA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C880255E1CBE41B80065BCE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +68,13 @@
 		C8A540C01CECB64D009E1413 /* screenRDA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = screenRDA.entitlements; sourceTree = "<group>"; };
 		C8B287541CCE09FD00F68A9D /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		C8EA0D101CD0B1ED00588898 /* LaunchStarter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchStarter.swift; sourceTree = "<group>"; };
+		C8F5F6521CEDCB8500F9B966 /* screenRDALauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = screenRDALauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8F5F6541CEDCB8500F9B966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8F5F65B1CEDCB8600F9B966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8F5F65F1CEDCB9400F9B966 /* screenRDALauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = screenRDALauncher.entitlements; sourceTree = "<group>"; };
+		C8F5F6641CEDCC6E00F9B966 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		C8F5F68C1CEDD53900F9B966 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8F5F6901CEDD53D00F9B966 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainMenu.xib; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8F5F6651CEDCC6E00F9B966 /* ServiceManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,15 +100,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C8F5F64F1CEDCB8500F9B966 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		C88025521CBE41B80065BCE0 = {
 			isa = PBXGroup;
 			children = (
+				C8F5F6641CEDCC6E00F9B966 /* ServiceManagement.framework */,
 				C880255D1CBE41B80065BCE0 /* screenRDA */,
 				C880256D1CBE41B90065BCE0 /* screenRDATests */,
 				C88025781CBE41B90065BCE0 /* screenRDAUITests */,
+				C8F5F6531CEDCB8500F9B966 /* screenRDALauncher */,
 				C880255C1CBE41B80065BCE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +128,7 @@
 				C880255B1CBE41B80065BCE0 /* screenRDA.app */,
 				C880256A1CBE41B90065BCE0 /* screenRDATests.xctest */,
 				C88025751CBE41B90065BCE0 /* screenRDAUITests.xctest */,
+				C8F5F6521CEDCB8500F9B966 /* screenRDALauncher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +166,18 @@
 			path = screenRDAUITests;
 			sourceTree = "<group>";
 		};
+		C8F5F6531CEDCB8500F9B966 /* screenRDALauncher */ = {
+			isa = PBXGroup;
+			children = (
+				C8F5F65F1CEDCB9400F9B966 /* screenRDALauncher.entitlements */,
+				C8F5F6541CEDCB8500F9B966 /* AppDelegate.swift */,
+				C8F5F68C1CEDD53900F9B966 /* Assets.xcassets */,
+				C8F5F6901CEDD53D00F9B966 /* MainMenu.xib */,
+				C8F5F65B1CEDCB8600F9B966 /* Info.plist */,
+			);
+			path = screenRDALauncher;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +188,7 @@
 				C88025571CBE41B80065BCE0 /* Sources */,
 				C88025581CBE41B80065BCE0 /* Frameworks */,
 				C88025591CBE41B80065BCE0 /* Resources */,
+				C8F5F6621CEDCC5A00F9B966 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -186,6 +235,23 @@
 			productReference = C88025751CBE41B90065BCE0 /* screenRDAUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		C8F5F6511CEDCB8500F9B966 /* screenRDALauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8F5F65E1CEDCB8600F9B966 /* Build configuration list for PBXNativeTarget "screenRDALauncher" */;
+			buildPhases = (
+				C8F5F64E1CEDCB8500F9B966 /* Sources */,
+				C8F5F64F1CEDCB8500F9B966 /* Frameworks */,
+				C8F5F6501CEDCB8500F9B966 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = screenRDALauncher;
+			productName = screenRDALauncher;
+			productReference = C8F5F6521CEDCB8500F9B966 /* screenRDALauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -212,6 +278,14 @@
 						CreatedOnToolsVersion = 7.3;
 						TestTargetID = C880255A1CBE41B80065BCE0;
 					};
+					C8F5F6511CEDCB8500F9B966 = {
+						CreatedOnToolsVersion = 7.3.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = C88025561CBE41B80065BCE0 /* Build configuration list for PBXProject "screenRDA" */;
@@ -230,6 +304,7 @@
 				C880255A1CBE41B80065BCE0 /* screenRDA */,
 				C88025691CBE41B90065BCE0 /* screenRDATests */,
 				C88025741CBE41B90065BCE0 /* screenRDAUITests */,
+				C8F5F6511CEDCB8500F9B966 /* screenRDALauncher */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +330,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8F5F6501CEDCB8500F9B966 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8F5F68E1CEDD53900F9B966 /* Assets.xcassets in Resources */,
+				C8F5F6911CEDD53D00F9B966 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +369,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C880257A1CBE41B90065BCE0 /* screenRDAUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8F5F64E1CEDCB8500F9B966 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8F5F6551CEDCB8500F9B966 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +565,34 @@
 			};
 			name = Release;
 		};
+		C8F5F65C1CEDCB8600F9B966 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = screenRDALauncher/screenRDALauncher.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = screenRDALauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.screenRDALauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C8F5F65D1CEDCB8600F9B966 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = screenRDALauncher/screenRDALauncher.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = screenRDALauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.burningtree.screenRDALauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -492,6 +612,7 @@
 				C88025801CBE41B90065BCE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C88025811CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "screenRDATests" */ = {
 			isa = XCConfigurationList;
@@ -500,12 +621,22 @@
 				C88025831CBE41B90065BCE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C88025841CBE41B90065BCE0 /* Build configuration list for PBXNativeTarget "screenRDAUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C88025851CBE41B90065BCE0 /* Debug */,
 				C88025861CBE41B90065BCE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8F5F65E1CEDCB8600F9B966 /* Build configuration list for PBXNativeTarget "screenRDALauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8F5F65C1CEDCB8600F9B966 /* Debug */,
+				C8F5F65D1CEDCB8600F9B966 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

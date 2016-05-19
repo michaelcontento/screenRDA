@@ -69,6 +69,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
 
     func menuWillOpen(menu: NSMenu) {
+        updateLaunchAtStartMenu()
         // Update and re-render to show only the latest infos
         onTimerTick()
     }
