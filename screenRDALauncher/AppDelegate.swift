@@ -17,14 +17,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let running = NSWorkspace.sharedWorkspace().runningApplications
         for app in running {
-            if (app.bundleIdentifier == mainAppIdentifier) {
+            if app.bundleIdentifier == mainAppIdentifier {
                 alreadyRunning = true
                 break
             }
         }
 
-        if (!alreadyRunning) {
-            NSDistributedNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.terminate), name: "killme", object: mainAppIdentifier)
+        if !alreadyRunning {
+            NSDistributedNotificationCenter
+                .defaultCenter()
+                .addObserver(self,
+                             selector: #selector(AppDelegate.terminate),
+                             name: "killme", object: mainAppIdentifier)
 
             let path = NSBundle.mainBundle().bundlePath as NSString
             var components = path.pathComponents

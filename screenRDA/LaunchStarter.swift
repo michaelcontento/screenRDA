@@ -24,7 +24,9 @@ func detectLaunchByHelper() {
     }
 
     _saveFlag(startedAtLogin)
-    NSDistributedNotificationCenter.defaultCenter().postNotificationName("killme", object: NSBundle.mainBundle().bundleIdentifier!)
+    NSDistributedNotificationCenter
+        .defaultCenter()
+        .postNotificationName("killme", object: NSBundle.mainBundle().bundleIdentifier!)
 }
 
 func _readFlag() -> Bool {

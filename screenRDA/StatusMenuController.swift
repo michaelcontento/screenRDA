@@ -122,7 +122,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
         // Render time
         var hours: Int = 0
         var minutes: Double = floor(runTime / 60)
-        while (minutes >= 60) {
+        while minutes >= 60 {
             hours += 1
             minutes -= 60
         }
@@ -132,19 +132,19 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     func formatHourAndMinute(hours: Int, minutes: Double) -> String {
         var format = ""
 
-        if (hours == 1) {
+        if hours == 1 {
             format += "%d Hour "
-        } else if (hours > 1) {
+        } else if hours > 1 {
             format += "%d Hours "
         }
 
-        if (minutes == 1) {
+        if minutes == 1 {
             format += "%.f Minute"
-        } else if (minutes > 1) {
+        } else if minutes > 1 {
             format += "%.f Minutes"
         }
 
-        if (hours == 0 && minutes == 0) {
+        if hours == 0 && minutes == 0 {
             format = "< 1 Minute"
         }
 
@@ -152,7 +152,7 @@ class StatusMenuController: NSObject, NSMenuDelegate {
     }
 
     func updateLaunchAtStartMenu() {
-        if (applicationIsInStartUpItems()) {
+        if applicationIsInStartUpItems() {
             launchAtStart.state = NSOnState
         } else {
             launchAtStart.state = NSOffState

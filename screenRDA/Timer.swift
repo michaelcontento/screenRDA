@@ -9,16 +9,16 @@
 import Foundation
 
 class Timer: NSObject {
-    var _lastTick: NSTimeInterval = NSDate().timeIntervalSince1970
-    var _lastDayOfYear: Int = -1
-    var _runTime: Double = 0
-    var _active: Bool = true
-    let _prefs = NSUserDefaults.standardUserDefaults()
-    let _calendar =  NSCalendar.autoupdatingCurrentCalendar()
-    let _dateFormatter = NSDateFormatter()
+    var lastTick: NSTimeInterval = NSDate().timeIntervalSince1970
+    var lastDayOfYear: Int = -1
+    var runTime: Double = 0
+    var active: Bool = true
+    let prefs = NSUserDefaults.standardUserDefaults()
+    let calendar =  NSCalendar.autoupdatingCurrentCalendar()
+    let dateFormatter = NSDateFormatter()
 
     func _getDayOfYear() -> Int {
-        return _calendar.ordinalityOfUnit(
+        return calendar.ordinalityOfUnit(
             .Day,
             inUnit: .Year,
             forDate: NSDate()
@@ -26,61 +26,61 @@ class Timer: NSObject {
     }
 
     func _getDateString() -> String {
-        return _dateFormatter.stringFromDate(NSDate())
+        return dateFormatter.stringFromDate(NSDate())
     }
 
     override init() {
         super.init()
 
-        _dateFormatter.dateFormat = "yyyy-MM-dd"
-        _lastDayOfYear = _getDayOfYear()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        lastDayOfYear = _getDayOfYear()
 
         _loadTime()
     }
 
     func _loadTime() {
-        _runTime = _prefs.doubleForKey(_getDateString())
+        runTime = prefs.doubleForKey(_getDateString())
     }
 
     func _saveTime() {
-        _prefs.setDouble(_runTime, forKey: _getDateString())
+        prefs.setDouble(runTime, forKey: _getDateString())
     }
 
     func enable(flag: Bool = true) {
-        if (_active == flag) {
+        if active == flag {
             return
         }
 
-        if (_active) {
+        if active {
             update()
         } else {
             let now = NSDate().timeIntervalSince1970
-            _lastTick = now
+            lastTick = now
         }
 
-        _active = flag
+        active = flag
     }
 
     func update() -> Double {
-        if (!_active) {
-            return _runTime
+        if !active {
+            return runTime
         }
 
         // Calculate time delta
         let now = NSDate().timeIntervalSince1970
-        let diff = now - _lastTick
-        _runTime += diff
-        _lastTick = now
+        let diff = now - lastTick
+        runTime += diff
+        lastTick = now
 
         // Detect day change
         let currentDayOfYear = _getDayOfYear()
-        if (currentDayOfYear != _lastDayOfYear) {
-            _lastDayOfYear = currentDayOfYear
-            _runTime = 0
+        if currentDayOfYear != lastDayOfYear {
+            lastDayOfYear = currentDayOfYear
+            runTime = 0
         } else {
             _saveTime()
         }
 
-        return _runTime
+        return runTime
     }
 }
